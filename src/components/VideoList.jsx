@@ -1,8 +1,10 @@
+
+
 var VideoList = (props) => (
   <div className="video-list media">
     {props.videos.map( item => 
       // <VideoListEntry src={item.snippet.thumbnails.default.url}/> 
-      <VideoListEntry video={item} /> 
+      <VideoListEntry updatePlayer={props.func} video={item} /> 
 
     )}
    

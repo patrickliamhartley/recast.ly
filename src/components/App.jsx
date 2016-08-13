@@ -1,10 +1,21 @@
+
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.updatePlayer = this.updatePlayer.bind(this);
+    this.state = {
+      videolist: window.exampleVideoData,
+      firstvid: window.exampleVideoData[0]
+    };
+
   }
 
-  updatePlayer (e) {
-    console.log(e);
+  updatePlayer (vid) {
+
+    this.setState({
+      firstvid: vid
+      
+    });
 
     
   }
@@ -14,10 +25,10 @@ class App extends React.Component {
       <div>
         <Nav />
         <div className="col-md-7">
-          <VideoPlayer video={exampleVideoData[0]}/>
+          <VideoPlayer video={this.state.firstvid}/>
         </div>
         <div className="col-md-5">
-          <VideoList videos={exampleVideoData}/>
+          <VideoList func={this.updatePlayer} videos={this.state.videolist}/>
 
         </div>
       </div>
