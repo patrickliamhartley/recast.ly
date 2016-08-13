@@ -3,6 +3,12 @@ class App extends React.Component {
     super(props);
   }
 
+  updatePlayer (e) {
+    console.log(e);
+
+    
+  }
+
   render() {
     return (
       <div>
